@@ -6,5 +6,5 @@ router = DefaultRouter()
 router.register(r'sensores', SensorViewSet)
 
 urlpatterns = [
-    path('sensores/', include(router.urls)),
+    path('', include(router.urls)),
 ]

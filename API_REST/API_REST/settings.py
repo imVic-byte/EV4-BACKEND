@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'barrera',
     'sensores',
     'usuarios',
+    'info',
 ]
 
 REST_FRAMEWORK = {

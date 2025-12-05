@@ -6,5 +6,5 @@ router = DefaultRouter()
 router.register(r'barrera', BarreraViewSet)
 
 urlpatterns = [
-    path('barrera/', include(router.urls)),
+    path('', include(router.urls)),
 ]
