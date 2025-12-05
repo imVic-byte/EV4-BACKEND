@@ -5,7 +5,10 @@ from sensores.urls import urlpatterns as sensores_urls
 from barrera.urls import urlpatterns as barrera_urls
 from usuarios.urls import urlpatterns as usuarios_urls
 from info.urls import urlpatterns as info_urls
-from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,6 +16,7 @@ urlpatterns = [
     path('api/', include(sensores_urls)),
     path('api/', include(barrera_urls)),
     path('api/', include(usuarios_urls)),
-    path('api/', include(info_urls)),
-    path('api-token/', obtain_auth_token),
+    path('api/info/', include(info_urls)),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
