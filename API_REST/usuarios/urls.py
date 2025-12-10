@@ -7,7 +7,7 @@ router.register(r'departamentos', DepartamentoViewSet)
 router.register(r'usuarios', UsuarioViewSet)
 
 urlpatterns = [
-    path('usuarios/', include(router.urls)),
+    path('', include(router.urls)),
     path('create-user/', UserCreateApiView.as_view(), name='user-create'),
     path('create-departamento/', DepartamentoCreateApiView.as_view(), name='departamento-create'),
 ]

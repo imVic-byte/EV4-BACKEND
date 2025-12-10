@@ -6,5 +6,5 @@ router = DefaultRouter()
 router.register(r'eventos', EventoViewSet)
 
 urlpatterns = [
-    path('eventos/', include(router.urls)),
+    path('', include(router.urls)),
 ]
